@@ -15,6 +15,7 @@ use App\Livewire\Admin\Product\Features as featureProductIndex;
 use App\Livewire\Admin\Product\Content as productContentIndex;
 use App\Livewire\Admin\Product\CkUpload;
 use App\Livewire\Admin\Delivery\Index as deliveryIndex;
+use App\Livewire\Admin\Payment\Index as paymentIndex;
 
 
 Route::name('admin.')->group(function () {
@@ -33,5 +34,7 @@ Route::name('admin.')->group(function () {
     Route::post('/ck-upload/{productId}', [CkUpload::class, 'upload'])->name('ck-upload');
 
     Route::get('/delivery',deliveryIndex::class)->name('delivery');
+    Route::get('/payment', paymentIndex::class)->name('payment');
+
 
 });

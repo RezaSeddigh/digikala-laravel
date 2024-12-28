@@ -4,7 +4,7 @@
         <div class="widget-header">
             <div class="row">
                 <div class="col-xl-12 col-md-12 col-sm-12 col-12">
-                    <h4>مدیریت روش های ارسال </h4>
+                    <h4>مدیریت روش های پرداخت </h4>
                 </div>
             </div>
         </div>
@@ -14,7 +14,7 @@
 
                 <div class="row mb-4">
                     <div class="col-sm-12">
-                        <label for="name" class="form-label">نام روش ارسال</label>
+                        <label for="name" class="form-label">نام روش پرداخت</label>
                         <input type="text" class="form-control" id="name" wire:model="name" name="name"
                                placeholder="">
                     </div>
@@ -30,13 +30,13 @@
                 @enderror
                 <div class="row mb-4">
                     <div class="col-sm-12">
-                        <label for="name" class="form-label">قیمت</label>
-                        <input type="text" class="form-control" id="name" wire:model="price" name="price"
+                        <label for="name" class="form-label">مرچنت کد(کد درگاه پرداخت)</label>
+                        <input type="text" class="form-control" id="name" wire:model="merchentId" name="merchentId"
                                placeholder="">
                     </div>
                 </div>
 
-                @error('price')
+                @error('merchentId')
                 <div class="alert alert-light-danger alert-dismissible fade show border-0 mb-4" role="alert"
                      wire:loading.remove>
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
