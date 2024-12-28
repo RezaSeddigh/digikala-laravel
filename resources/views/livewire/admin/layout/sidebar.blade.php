@@ -64,7 +64,7 @@
                 <ul class="collapse submenu list-unstyled" id="components" data-bs-parent="#accordionExample">
 
                     <li>
-                        <a class="badge badge-light-success" href=""> افزودن محصول جدید </a>
+                        <a class="badge badge-light-success" href="{{route('admin.product.create')}}"> افزودن محصول جدید </a>
                     </li>
                     <li>
                         <a class="badge badge-light-info" href=""> لیست محصولات </a>

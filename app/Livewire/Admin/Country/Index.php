@@ -58,6 +58,6 @@ class Index extends Component
         $countries = Country::query()->paginate(10);
         return view('livewire.admin.country.index', [
             'countries' => $countries
-        ])->layout('layouts.admin.app');
+        ]);
     }
 }
