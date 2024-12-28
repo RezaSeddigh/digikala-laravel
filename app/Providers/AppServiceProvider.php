@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Repository\admin\country\AdminCountryRepository;
+use App\Repository\admin\country\AdminCountryRepositoryInterface;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -11,7 +13,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        //
+        $this->app->singleton(AdminCountryRepositoryInterface::class, AdminCountryRepository::class);
+
     }
 
     /**
