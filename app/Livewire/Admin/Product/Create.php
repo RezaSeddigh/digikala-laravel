@@ -97,6 +97,15 @@ class Create extends Component
     {
         $this->coverIndex = $index;
     }
+    public function removePhoto($index)
+    {
+        if ($index == $this->coverIndex) {
+            $this->coverIndex = null;
+        }
+        array_splice($this->photos, $index, 1);
+
+    }
+
 
     public function render()
     {
