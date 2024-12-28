@@ -4,6 +4,7 @@ namespace App\Livewire\Admin\Product;
 
 use App\Models\Category;
 use App\Models\product;
+use App\Models\ProductImage;
 use App\Models\Seller;
 use App\Repository\admin\product\AdminProductRepositoryInterface;
 use Illuminate\Support\Facades\Validator;
@@ -118,6 +119,23 @@ class Create extends Component
             $this->coverIndex = null;
         }
         array_splice($this->photos, $index, 1);
+
+    }
+
+
+    //edit
+
+    public function removeOldPhoto(ProductImage $productImage, $productId)
+    {
+
+        $this->repository->removeOldPhoto($productImage, $productId);
+
+    }
+
+    public function setCoverOldImage($photoId)
+    {
+        $this->repository->setCoverOldImage($photoId,$this->productId);
+        $this->dispatch('success', 'تصویر کاور با موفقیت تغییر کرد!');
 
     }
 

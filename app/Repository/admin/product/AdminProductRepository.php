@@ -122,4 +122,23 @@ class AdminProductRepository implements AdminProductRepositoryInterface
             'long_description' => $formData['long_description'],
         ]);
     }
+    public function removeOldPhoto($productImage, $productId)
+    {
+
+        $productImage->delete();
+        \Illuminate\Support\Facades\File::delete(public_path('products/' . $productId . '/small/' . $productImage->path));
+        \Illuminate\Support\Facades\File::delete(public_path('products/' . $productId . '/medium/' . $productImage->path));
+        \Illuminate\Support\Facades\File::delete(public_path('products/' . $productId . '/large/' . $productImage->path));
+
+    }
+
+    public function setCoverOldImage($photoId,$productId)
+    {
+
+        ProductImage::query()->where('product_id', $productId)->update(['is_cover' => false]);
+        ProductImage::query()->where([
+            'product_id' => $productId,
+            'id' => $photoId,
+        ])->update(['is_cover' => true]);
+    }
 }
