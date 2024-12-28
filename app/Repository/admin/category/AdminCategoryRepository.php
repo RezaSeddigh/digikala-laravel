@@ -4,6 +4,7 @@ namespace App\Repository\admin\category;
 
 use App\Models\Category;
 use App\Models\CategoryFeature;
+use App\Models\CategoryFeatureValue;
 
 class AdminCategoryRepository implements AdminCategoryRepositoryInterface
 {
@@ -29,6 +30,18 @@ class AdminCategoryRepository implements AdminCategoryRepositoryInterface
             [
                 'name' => $formData['name'],
                 'category_id' => $categoryId,
+            ]
+        );
+    }
+    public function submitCategoryFeatureValue($formData,$valueId,$featureId)
+    {
+
+        CategoryFeatureValue::query()->updateOrCreate([
+            'id' => $valueId,
+        ],
+            [
+                'name' => $formData['name'],
+                'category_feature_id' => $featureId,
             ]
         );
     }
