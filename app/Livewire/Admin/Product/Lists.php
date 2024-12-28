@@ -10,7 +10,7 @@ class Lists extends Component
     public function render()
     {
         $products = product::query()
-
+            ->with('category')
             ->paginate(10);
         return view('livewire.admin.product.list.index', [
             'products' => $products,

@@ -70,7 +70,7 @@
                                     </div>
                                 </div>
                             </td>
-                            <td></td>
+                            <td>{{@$product->category->name}}</td>
                             <td>{{number_format($product->price)}}</td>
                             <td class="text-center">
                                 <a href="" class="btn btn-outline-info">ویژگی</a>
