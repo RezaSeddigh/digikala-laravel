@@ -283,12 +283,12 @@ body.dark .inv--note p {
     top: 0;
   }
 }
-@page {
+/*@page {
   body.dark {
     size: auto;
     margin: 0mm;
   }
-}
+}*/
 
 /*
 ===============================
