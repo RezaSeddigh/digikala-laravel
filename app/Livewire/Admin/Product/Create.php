@@ -22,6 +22,8 @@ class Create extends Component
     public $coverIndex = 0;
     public $photos = [];
 
+
+
     private $repository;
 
     public function boot(AdminProductRepositoryInterface $repository)
@@ -57,6 +59,8 @@ class Create extends Component
 
             $formData['photos'] = $this->photos;
 
+            $formData['coverIndex'] = $this->coverIndex;
+
             $validator = Validator::make($formData, [
                 'photos.*' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp',
                 'name' => 'required|string',
@@ -70,9 +74,10 @@ class Create extends Component
                 'discount_duration' => 'nullable|string',
                 'sellerId' => 'nullable|exists:sellers,id',
                 'categoryId' => 'required|exists:categories,id',
+                'coverIndex' => 'required',
 
             ], [
-
+                'coverIndex.required' => 'لطفا یک تصویر شاخص انتخاب کنید',
                 '*.required' => 'فیلد ضروری است',
                 '*.string' => 'فرمت اشتباه است ',
                 '*.integer' => 'این فیلد باید از نوع عددی باشد',
@@ -83,11 +88,15 @@ class Create extends Component
             ]);
             $validator->validate();
             $this->resetValidation();
-            $this->repository->submit($formData, $this->productId,$this->photos,$this->coverIndex);
+            $this->repository->submit($formData,$this->productId,$this->photos,$this->coverIndex);
             session()->flash('success', 'محصول با موفقیت افزود شد!');
         }
     }
 
+    public function setCoverImage($index)
+    {
+        $this->coverIndex = $index;
+    }
 
     public function render()
     {

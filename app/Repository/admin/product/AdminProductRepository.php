@@ -60,7 +60,9 @@ class AdminProductRepository implements AdminProductRepositoryInterface
     }
     public function submitToProductImage($photos, $productId, $coverIndex)
     {
-        foreach ($photos as $photo) {
+        ProductImage::query()->where('product_id', $productId)->update(['is_cover' => false]);
+
+        foreach ($photos as $index => $photo) {
 
             $path = pathinfo($photo->hashName(), PATHINFO_FILENAME) . '.webp';
 
@@ -68,7 +70,7 @@ class AdminProductRepository implements AdminProductRepositoryInterface
                 [
                     'path' => $path,
                     'product_id' => $productId,
-                    'is_cover' => 1,
+                    'is_cover' => $index == $coverIndex,
                 ]
             );
         }
