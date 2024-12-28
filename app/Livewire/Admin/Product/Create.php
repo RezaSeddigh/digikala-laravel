@@ -6,6 +6,7 @@ use App\Models\Category;
 use App\Models\Seller;
 use App\Repository\admin\product\AdminProductRepositoryInterface;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Str;
 use Livewire\Component;
 
 class Create extends Component
@@ -21,6 +22,11 @@ class Create extends Component
     public function boot(AdminProductRepositoryInterface $repository)
     {
         $this->repository = $repository;
+    }
+
+    public function updatedName()
+    {
+        $this->slug = Str::slug($this->name, '-', null);
     }
 
 
