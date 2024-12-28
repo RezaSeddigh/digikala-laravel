@@ -8,14 +8,19 @@ use App\Repository\admin\product\AdminProductRepositoryInterface;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
 use Livewire\Component;
+use Livewire\WithFileUploads;
 
 class Create extends Component
 {
+    use WithFileUploads;
+
     public $categories = [];
     public $sellers = [];
     public $name;
     public $slug;
     public $productId;
+    public $coverIndex = 0;
+    public $photos = [];
 
     private $repository;
 
@@ -50,7 +55,10 @@ class Create extends Component
         if (!isset($formData['selleId'])) {
             $formData['sellerId'] = null;
 
+            $formData['photos'] = $this->photos;
+
             $validator = Validator::make($formData, [
+                'photos.*' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp',
                 'name' => 'required|string',
                 'slug' => 'required|string',
                 'meta_title' => 'nullable|string',
@@ -62,6 +70,7 @@ class Create extends Component
                 'discount_duration' => 'nullable|string',
                 'sellerId' => 'nullable|exists:sellers,id',
                 'categoryId' => 'required|exists:categories,id',
+
             ], [
 
                 '*.required' => 'فیلد ضروری است',
@@ -70,10 +79,11 @@ class Create extends Component
                 '*.min' => 'حداکثر تعداد کاراکترها : 50',
                 'categoryId.exists' => 'دسته بندی نامعتبر است ',
                 'sellerId.exists' => 'فروشنده نامعتبر است ',
+                'photos.*.image' => 'فرمت نامعتبر است .',
             ]);
             $validator->validate();
             $this->resetValidation();
-            $this->repository->submit($formData, $this->productId);
+            $this->repository->submit($formData, $this->productId,$this->photos,$this->coverIndex);
             session()->flash('success', 'محصول با موفقیت افزود شد!');
         }
     }
