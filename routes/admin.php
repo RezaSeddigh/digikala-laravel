@@ -7,6 +7,7 @@ use App\Livewire\Admin\Country\Index as countryIndex;
 use App\Livewire\Admin\State\Index as stateIndex;
 use App\Livewire\Admin\City\Index as cityIndex;
 use App\Livewire\Admin\Category\Index as categoryIndex;
+use App\Livewire\Admin\Category\Features as featuresIndex;
 
 
 Route::name('admin.')->group(function () {
@@ -16,5 +17,6 @@ Route::name('admin.')->group(function () {
     Route::get('/state',stateIndex::class)->name('state');
     Route::get('/city',cityIndex::class)->name('city');
     Route::get('/category',categoryIndex::class)->name('category');
+    Route::get('/category/features/{category}',featuresIndex::class)->name('category.features');
 
 });

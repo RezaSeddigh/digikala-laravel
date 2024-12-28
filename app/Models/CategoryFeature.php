@@ -9,4 +9,6 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class CategoryFeature extends Model
 {
     use HasFactory, SoftDeletes;
+
+    protected $guarded = [];
 }
