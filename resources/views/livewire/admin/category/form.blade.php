@@ -25,7 +25,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
                         <svg> ...</svg>
                     </button>
-                    <strong>خطا !</strong> {{$message}}.</button>
+                    <strong></strong> {{$message}}.</button>
                 </div>
                 @enderror
                 <div class="row mb-4">
@@ -47,7 +47,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
                         <svg> ...</svg>
                     </button>
-                    <strong>خطا !</strong> {{$message}}.</button>
+                    <strong></strong> {{$message}}.</button>
                 </div>
                 @enderror
 

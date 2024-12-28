@@ -15,6 +15,10 @@
 <link href="/admin/src/assets/css/dark/scrollspyNav.css" rel="stylesheet" type="text/css" />
 <link href="/admin/src/plugins/css/dark/sweetalerts2/custom-sweetalert.css" rel="stylesheet" type="text/css" />
 
+<!--  BEGIN CUSTOM STYLE FILE  -->
+<link rel="stylesheet" type="text/css" href="/admin/src/assets/css/light/elements/alert.css">
+<link rel="stylesheet" type="text/css" href="/admin/src/assets/css/dark/elements/alert.css">
+
 
 <link rel="icon" type="image/x-icon" href="/admin/src/assets/img/favicon.ico"/>
 <link href="/admin/layouts/modern-dark-menu/css/light/loader.css" rel="stylesheet" type="text/css" />
