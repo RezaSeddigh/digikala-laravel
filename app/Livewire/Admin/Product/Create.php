@@ -3,6 +3,7 @@
 namespace App\Livewire\Admin\Product;
 
 use App\Models\Category;
+use App\Models\product;
 use App\Models\Seller;
 use App\Repository\admin\product\AdminProductRepositoryInterface;
 use Illuminate\Support\Facades\Validator;
@@ -21,6 +22,8 @@ class Create extends Component
     public $productId;
     public $coverIndex = 0;
     public $photos = [];
+    //edit
+    public $product;
 
 
 
@@ -39,6 +42,16 @@ class Create extends Component
 
     public function mount()
     {
+        if ($_GET and $_GET['p_id']) {
+            $this->productId = $_GET['p_id'];
+            $product = $this->product = product::query()
+                ->with('seo', 'images')
+                ->where('id', $this->productId)->firstOrFail();
+            $this->name = $product->name;
+            @$this->slug = $product->seo->slug;
+            @$this->coverIndex = $product->coverImage->id;
+        }
+
         $this->categories = Category::all();
         $this->sellers = Seller::query()->select('id', 'shop_name')->get();
     }

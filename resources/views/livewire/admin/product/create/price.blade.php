@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-xxl-12 col-md-6 mb-4">
                 <label for="price">قیمت</label>
-                <input type="text" class="form-control" id="price" name="price" value="">
+                <input type="text" class="form-control" id="price" name="price" value="{{@$product->price}}">
             </div>
             @error('price')
             <div class="alert alert-light-danger alert-dismissible fade show border-0 mb-4" role="alert"
@@ -16,7 +16,7 @@
             @enderror
             <div class="col-xxl-12 col-md-6 mb-4">
                 <label for="stock">موجودی</label>
-                <input type="text" class="form-control" id="stock" name="stock" value="">
+                <input type="text" class="form-control" id="stock" name="stock" value="{{@$product->stock}}">
             </div>
             @error('stock')
             <div class="alert alert-light-danger alert-dismissible fade show border-0 mb-4" role="alert"

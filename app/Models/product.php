@@ -21,6 +21,20 @@ class product extends Model
         return $this->belongsTo(ProductImage::class, 'id', 'product_id')->where('is_cover', '=', true);
     }
 
+    public function seo()
+    {
+        return $this->belongsTo(SeoItems::class, 'id', 'ref_id')->where('type', '=', 'product');
+    }
+    public function images()
+    {
+        return $this->hasMany(ProductImage::class);
+    }
+
+    public function seller()
+    {
+        return $this->belongsTo(Seller::class);
+    }
+
 }
 
 
