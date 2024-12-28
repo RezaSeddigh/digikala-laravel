@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Repository\admin\category\AdminCategoryRepository;
+use App\Repository\admin\category\AdminCategoryRepositoryInterface;
 use App\Repository\admin\city\AdminCityRepository;
 use App\Repository\admin\city\AdminCityRepositoryInterface;
 use App\Repository\admin\country\AdminCountryRepository;
@@ -20,6 +22,7 @@ class AppServiceProvider extends ServiceProvider
         $this->app->singleton(AdminCountryRepositoryInterface::class, AdminCountryRepository::class);
         $this->app->singleton(AdminStateRepositoryInterface::class, AdminStateRepository::class);
         $this->app->singleton(AdminCityRepositoryInterface::class, AdminCityRepository::class);
+        $this->app->singleton(AdminCategoryRepositoryInterface::class, AdminCategoryRepository::class);
 
     }
 
