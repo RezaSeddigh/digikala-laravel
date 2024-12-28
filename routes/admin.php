@@ -1,5 +1,6 @@
 <?php
 
+use App\Livewire\Admin\Product\CkUpload;
 use Illuminate\Support\Facades\Route;
 
 use App\Livewire\Admin\Dashboard\Index as dashboardIndex;
@@ -12,6 +13,7 @@ use App\Livewire\Admin\Category\FeatureValue as FeatureValueIndex;
 use App\Livewire\Admin\Product\Create as createProductIndex;
 use App\Livewire\Admin\Product\Lists as listProductIndex;
 use App\Livewire\Admin\Product\Features as featureProductIndex;
+use App\Livewire\Admin\Product\Content as productContentIndex;
 
 
 Route::name('admin.')->group(function () {
@@ -26,5 +28,8 @@ Route::name('admin.')->group(function () {
     Route::get('/product/create',createProductIndex::class)->name('product.create');
     Route::get('/product/lists',listProductIndex::class)->name('product.lists');
     Route::get('/product/features/{product}', featureProductIndex::class)->name('product.features');
+    Route::get('/product/content/{product}', productContentIndex::class)->name('product.content');
+    Route::post('/ck-upload/{productId}', [CkUpload::class, 'upload'])->name('ck-upload');
+
 
 });

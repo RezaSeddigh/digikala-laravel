@@ -31,3 +31,4 @@
         })
     })
 </script>
+@stack('script')

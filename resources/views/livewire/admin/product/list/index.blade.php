@@ -76,7 +76,7 @@
                                 <a href="{{route('admin.product.features',$product->id)}}" class="btn btn-outline-info">ویژگی</a>
                             </td>
                             <td class="text-center">
-                                <a href=""
+                                <a href="{{route('admin.product.content',$product->id)}}"
                                    class="btn btn-outline-warning">محتوا</a>
                             </td>
                             <td class="text-center">

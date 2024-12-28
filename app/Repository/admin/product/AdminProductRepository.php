@@ -115,4 +115,11 @@ class AdminProductRepository implements AdminProductRepositoryInterface
 
         }
     }
+    public function submitProductContent($formData, $productId)
+    {
+        product::query()->where('id', $productId)->update([
+            'short_description' => $formData['short_description'],
+            'long_description' => $formData['long_description'],
+        ]);
+    }
 }
