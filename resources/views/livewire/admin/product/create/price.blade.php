@@ -30,13 +30,18 @@
             <div class="col-xxl-12 col-md-6 mb-4">
                 <label for="categories">دسته بندی</label>
                 <select class="form-select" name="categoryId" id="categoryId">
-
+                    @foreach($categories as $category)
+                        <option
+                            value="{{@$category->id}}" {{@$category->id == @$product->category_id ? 'selected':''}}>{{@$category->name}}</option>
+                    @endforeach
                 </select>
             </div>
             <div class="col-xxl-12 col-md-6 mb-4">
                 <label for="sellers">فروشنده</label>
                 <select class="form-select" name="sellerId" id="sellerId">
-
+                    @foreach($sellers as $seller)
+                        <option value="{{@$seller->id}}"  {{@$seller->id == @$product->seller_id ? 'selected':''}}>{{@$seller->shop_name}}</option>
+                    @endforeach
                 </select>
             </div>
         </div>

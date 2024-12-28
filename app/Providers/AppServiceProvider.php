@@ -8,6 +8,8 @@ use App\Repository\admin\city\AdminCityRepository;
 use App\Repository\admin\city\AdminCityRepositoryInterface;
 use App\Repository\admin\country\AdminCountryRepository;
 use App\Repository\admin\country\AdminCountryRepositoryInterface;
+use App\Repository\admin\product\AdminProductRepository;
+use App\Repository\admin\product\AdminProductRepositoryInterface;
 use App\Repository\admin\state\AdminStateRepository;
 use App\Repository\admin\state\AdminStateRepositoryInterface;
 use Illuminate\Support\ServiceProvider;
@@ -23,6 +25,7 @@ class AppServiceProvider extends ServiceProvider
         $this->app->singleton(AdminStateRepositoryInterface::class, AdminStateRepository::class);
         $this->app->singleton(AdminCityRepositoryInterface::class, AdminCityRepository::class);
         $this->app->singleton(AdminCategoryRepositoryInterface::class, AdminCategoryRepository::class);
+        $this->app->singleton(AdminProductRepositoryInterface::class, AdminProductRepository::class);
 
     }
 
