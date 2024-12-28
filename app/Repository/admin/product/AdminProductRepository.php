@@ -24,7 +24,6 @@ class AdminProductRepository implements AdminProductRepositoryInterface
         });
 
     }
-
     public function submitToProduct($formData, $productId)
     {
         return product::query()->updateOrCreate([
@@ -43,7 +42,6 @@ class AdminProductRepository implements AdminProductRepositoryInterface
             ]
         );
     }
-
     public function submitToSeoItem($formData, $productId)
     {
         SeoItems::query()->updateOrCreate(

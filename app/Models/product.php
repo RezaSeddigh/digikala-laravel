@@ -16,7 +16,10 @@ class product extends Model
     {
         return $this->belongsTo(Category::class);
     }
-
+    public function coverImage()
+    {
+        return $this->belongsTo(ProductImage::class, 'id', 'product_id')->where('is_cover', '=', true);
+    }
 
 }
 
