@@ -73,7 +73,7 @@
                             <td>{{@$product->category->name}}</td>
                             <td>{{number_format($product->price)}}</td>
                             <td class="text-center">
-                                <a href="" class="btn btn-outline-info">ویژگی</a>
+                                <a href="{{route('admin.product.features',$product->id)}}" class="btn btn-outline-info">ویژگی</a>
                             </td>
                             <td class="text-center">
                                 <a href=""

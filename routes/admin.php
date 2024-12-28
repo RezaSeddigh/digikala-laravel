@@ -11,6 +11,7 @@ use App\Livewire\Admin\Category\Features as featuresIndex;
 use App\Livewire\Admin\Category\FeatureValue as FeatureValueIndex;
 use App\Livewire\Admin\Product\Create as createProductIndex;
 use App\Livewire\Admin\Product\Lists as listProductIndex;
+use App\Livewire\Admin\Product\Features as featureProductIndex;
 
 
 Route::name('admin.')->group(function () {
@@ -24,5 +25,6 @@ Route::name('admin.')->group(function () {
     Route::get('/category/features/{categoryFeature}/values/',FeatureValueIndex::class)->name('category.features.values');
     Route::get('/product/create',createProductIndex::class)->name('product.create');
     Route::get('/product/lists',listProductIndex::class)->name('product.lists');
+    Route::get('/product/features/{product}', featureProductIndex::class)->name('product.features');
 
 });

@@ -11,4 +11,13 @@ class CategoryFeature extends Model
     use HasFactory, SoftDeletes;
 
     protected $guarded = [];
+    public function value()
+    {
+        return $this->hasMany(CategoryFeatureValue::class);
+    }
+
+    public function categoryFeatureValues()
+    {
+        return $this->hasMany(CategoryFeatureValue::class);
+    }
 }

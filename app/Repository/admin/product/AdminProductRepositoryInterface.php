@@ -10,4 +10,5 @@ interface AdminProductRepositoryInterface
     public function submitToProductImage($photos, $productId, $coverIndex);
     public function saveImages($photos, $productId);
     public function generateProductCode();
+    public function submitProductFeatures($formData, $productId);
 }
