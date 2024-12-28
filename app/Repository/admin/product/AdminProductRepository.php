@@ -39,6 +39,7 @@ class AdminProductRepository implements AdminProductRepositoryInterface
                 'discount_duration' => $formData['discount_duration'],
                 'seller_id' => $formData['sellerId'],
                 'category_id' => $formData['categoryId'],
+                'p_code' => config('app.name') . '-' . $this->generateProductCode(),
             ]
         );
     }
@@ -84,5 +85,14 @@ class AdminProductRepository implements AdminProductRepositoryInterface
             $photo->delete();
 
         }
+    }
+    public function generateProductCode()
+    {
+        do {
+            $randomCode = rand(1000, 100000000);
+            $checkCode = product::query()->where('p_code', $randomCode)->first();
+        } while ($checkCode);
+
+        return $randomCode;
     }
 }
