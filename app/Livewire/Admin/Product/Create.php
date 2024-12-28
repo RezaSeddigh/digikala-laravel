@@ -89,7 +89,9 @@ class Create extends Component
             $validator->validate();
             $this->resetValidation();
             $this->repository->submit($formData,$this->productId,$this->photos,$this->coverIndex);
+            $this->redirect(route('admin.product.lists'));
             session()->flash('success', 'محصول با موفقیت افزود شد!');
+
         }
     }
 

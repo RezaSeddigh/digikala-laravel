@@ -67,7 +67,7 @@
                         <a class="badge badge-light-success" href="{{route('admin.product.create')}}"> افزودن محصول جدید </a>
                     </li>
                     <li>
-                        <a class="badge badge-light-info" href=""> لیست محصولات </a>
+                        <a class="badge badge-light-info" href="{{route('admin.product.lists')}}"> لیست محصولات </a>
                     </li>
 
                 </ul>
