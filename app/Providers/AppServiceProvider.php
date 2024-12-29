@@ -14,6 +14,8 @@ use App\Repository\admin\payment\AdminPaymentRepository;
 use App\Repository\admin\payment\AdminPaymentRepositoryInterface;
 use App\Repository\admin\product\AdminProductRepository;
 use App\Repository\admin\product\AdminProductRepositoryInterface;
+use App\Repository\admin\slider\AdminSliderRepository;
+use App\Repository\admin\slider\AdminSliderRepositoryInterface;
 use App\Repository\admin\state\AdminStateRepository;
 use App\Repository\admin\state\AdminStateRepositoryInterface;
 use App\Repository\admin\story\AdminStoryRepository;
@@ -37,6 +39,7 @@ class AppServiceProvider extends ServiceProvider
         $this->app->singleton(AdminDeliveryRepositoryInterface::class, AdminDeliveryRepository::class);
         $this->app->singleton(AdminPaymentRepositoryInterface::class, AdminPaymentRepository::class);
         $this->app->singleton(AdminStoryRepositoryInterface::class, AdminStoryRepository::class);
+        $this->app->singleton(AdminSliderRepositoryInterface::class, AdminSliderRepository::class);
 
         $this->app->singleton(ClientAuthRepositoryInterface::class, ClientAuthRepository::class);
 
