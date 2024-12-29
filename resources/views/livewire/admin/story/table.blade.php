@@ -37,7 +37,7 @@
                                     </div>
                                 </div>
                             </td>
-                            <td><img src="/stories/thumbnail/{{$item->thumbnail}}" width="70" alt=""></td>
+                            <td class="text-center"><img src="/stories/thumbnail/{{$item->thumbnail}}" width="70" alt=""></td>
                             <td>
                                 <button data-story-title="{{$item->title}}" data-story="/stories/story/{{$item->story}}" type="button" class="btn btn-primary mr-2 _effect--ripple waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#storyModal">
                                     نمایش استوری

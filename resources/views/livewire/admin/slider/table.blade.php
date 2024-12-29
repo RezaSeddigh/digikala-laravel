@@ -36,7 +36,7 @@
                                     </div>
                                 </div>
                             </td>
-                            <td><img src="/sliders/{{$item->image}}" width="90" alt=""></td>
+                            <td class="text-center"><img src="/sliders/{{$item->image}}" width="90" alt=""></td>
                             <td class="text-center">
                                 <div>
                                     <div class="form-check form-check-primary form-check-inline ms-3">
