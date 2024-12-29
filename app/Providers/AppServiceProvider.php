@@ -16,6 +16,8 @@ use App\Repository\admin\product\AdminProductRepository;
 use App\Repository\admin\product\AdminProductRepositoryInterface;
 use App\Repository\admin\state\AdminStateRepository;
 use App\Repository\admin\state\AdminStateRepositoryInterface;
+use App\Repository\client\auth\ClientAuthRepository;
+use App\Repository\client\auth\ClientAuthRepositoryInterface;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -32,6 +34,8 @@ class AppServiceProvider extends ServiceProvider
         $this->app->singleton(AdminProductRepositoryInterface::class, AdminProductRepository::class);
         $this->app->singleton(AdminDeliveryRepositoryInterface::class, AdminDeliveryRepository::class);
         $this->app->singleton(AdminPaymentRepositoryInterface::class, AdminPaymentRepository::class);
+
+        $this->app->singleton(ClientAuthRepositoryInterface::class, ClientAuthRepository::class);
 
     }
 

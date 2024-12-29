@@ -2,6 +2,7 @@
 
 namespace App\Livewire\Client\Auth;
 
+use App\Repository\client\auth\ClientAuthRepository;
 use Laravel\Socialite\Facades\Socialite;
 use Livewire\Component;
 
@@ -14,8 +15,13 @@ class Index extends Component
 
     public function handleProviderCallback()
     {
+        $repository = new ClientAuthRepository();
+
         $gmailUser = Socialite::driver('google')->stateless()->user();
-        dd($gmailUser);
+
+        $repository->checkUser($gmailUser);
+
+        return redirect()->route('home');
     }
 
     public function render()
