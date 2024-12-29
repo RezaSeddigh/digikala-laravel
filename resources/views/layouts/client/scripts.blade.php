@@ -66,3 +66,4 @@
         spaceBetween: 10,
     });
 </script>
+@stack('')

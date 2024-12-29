@@ -16,6 +16,7 @@ use App\Livewire\Admin\Product\Content as productContentIndex;
 use App\Livewire\Admin\Product\CkUpload;
 use App\Livewire\Admin\Delivery\Index as deliveryIndex;
 use App\Livewire\Admin\Payment\Index as paymentIndex;
+use App\Livewire\Admin\Story\Index as storyIndex;
 
 
 Route::name('admin.')->group(function () {
@@ -35,6 +36,7 @@ Route::name('admin.')->group(function () {
 
     Route::get('/delivery',deliveryIndex::class)->name('delivery');
     Route::get('/payment', paymentIndex::class)->name('payment');
+    Route::get('/story', storyIndex::class)->name('story');
 
 
 });
