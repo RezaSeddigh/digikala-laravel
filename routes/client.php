@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Livewire\Client\Auth\Index as AuthIndex;
+use App\Livewire\Client\Home\Index as HomeIndex;
 
 Route::name('client.')->group(function () {
 
@@ -10,7 +11,6 @@ Route::name('client.')->group(function () {
     Route::get('/gmail', [AuthIndex::class, 'redirectToProvider'])->name('gmail');
     Route::get('/auth/gmail/callback', [AuthIndex::class, 'handleProviderCallback'])->name('gmail.callback');
 
-    Route::get('/', AuthIndex::class)->name('home');
-
+    Route::get('/', HomeIndex::class)->name('home');
 
 });
