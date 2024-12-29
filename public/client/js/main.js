@@ -198,4 +198,123 @@ $(document).ready(function () {
 
   let countdownInterval = setInterval(updateCountdown, 1000);
   updateCountdown(); // Initial call to set the timer immediately
+
 });
+
+function initializeSwiper() {
+    // Story section
+    var swiper2 = new Swiper(".myStorySwiper", {
+        slidesPerView: 12,
+        spaceBetween: 10,
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+        breakpoints: {
+            // Responsive breakpoints
+            320: {
+                slidesPerView: 4,
+                spaceBetween: 10,
+            },
+            375: {
+                slidesPerView: 5,
+                spaceBetween: 10,
+            },
+            425: {
+                slidesPerView: 6,
+                spaceBetween: 20,
+            },
+            768: {
+                slidesPerView: 7,
+                spaceBetween: 20,
+            },
+            1024: {
+                slidesPerView: 12,
+                spaceBetween: 20,
+            },
+        },
+    });
+
+    // product slider
+    var swiper1 = new Swiper(".mySwiper", {
+        slidesPerView: 5,
+        spaceBetween: 10,
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+        breakpoints: {
+            // Responsive breakpoints
+            320: {
+                slidesPerView: 1,
+                spaceBetween: 10,
+            },
+            480: {
+                slidesPerView: 2,
+                spaceBetween: 20,
+            },
+            768: {
+                slidesPerView: 3,
+                spaceBetween: 30,
+            },
+            1024: {
+                slidesPerView: 4,
+                spaceBetween: 10,
+            },
+        },
+    });
+
+    // Brands slider
+    var swiper3 = new Swiper(".myBrandSwiper", {
+        slidesPerView: 5,
+        spaceBetween: 10,
+
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+        breakpoints: {
+            // Responsive breakpoints
+            320: {
+                slidesPerView: 1,
+                spaceBetween: 10,
+            },
+            480: {
+                slidesPerView: 2,
+                spaceBetween: 20,
+            },
+            768: {
+                slidesPerView: 3,
+                spaceBetween: 30,
+            },
+            1024: {
+                slidesPerView: 4,
+                spaceBetween: 10,
+            },
+        },
+    });
+
+
+    // به تمام دکمه‌های با ویژگی data-story event listener اضافه کنید
+    $('.story-item[data-story]').on('click', function () {
+        // دریافت URL ویدیو از data-story
+        var storyUrl = $(this).data('story');
+        var storyTitle = $(this).data('story-title');
+
+        // تنظیم URL به عنوان src تگ video
+        $('#videoSource').attr('src', storyUrl);
+        $('.modal-title').html(storyTitle);
+
+        // بارگذاری و پخش ویدیو
+        var videoPlayer = $('#videoPlayer').get(0);
+        videoPlayer.load();
+        videoPlayer.play();
+    });
+
+    // هنگامی که مدال بسته می‌شود
+    $('#storyModal').on('hide.bs.modal', function () {
+        var videoPlayer = $('#videoPlayer').get(0);
+        videoPlayer.pause(); // توقف ویدیو
+        videoPlayer.currentTime = 0; // تنظیم ویدیو به ابتدای آن
+    });
+}
