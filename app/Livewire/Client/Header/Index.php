@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Livewire\Client\Home\Add;
+namespace App\Livewire\Client\Header;
 
 use Livewire\Component;
 
@@ -8,6 +8,6 @@ class Index extends Component
 {
     public function render()
     {
-        return view('livewire.client.home.add.index');
+        return view('livewire.client.header.index');
     }
 }
