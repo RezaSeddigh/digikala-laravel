@@ -1,4 +1,4 @@
-<div class="col-md-8">
+<div class="col-md-8 p-3">
     <div class="statbox widget box box-shadow">
         <div class="widget-header">
             <div class="row">
@@ -13,12 +13,13 @@
                 <table class="table table-bordered">
                     <thead>
                     <tr>
-                        <th scope="col">#</th>
+                        <th scope="col">ردیف</th>
                         <th scope="col">عنوان</th>
                         <th scope="col">تصویر بند انگشتی</th>
-                        <th scope="col">استوری</th>
+                        <th class="text-center" scope="col">استوری</th>
+                        <th scope="col">وضعیت</th>
+                        <th scope="col">حذف</th>
 
-                        <th class="text-center" scope="col"></th>
                     </tr>
                     </thead>
                     <tbody>
@@ -38,10 +39,18 @@
                                 </div>
                             </td>
                             <td class="text-center"><img src="/stories/thumbnail/{{$item->thumbnail}}" width="70" alt=""></td>
-                            <td>
+                            <td class="text-center">
                                 <button data-story-title="{{$item->title}}" data-story="/stories/story/{{$item->story}}" type="button" class="btn btn-primary mr-2 _effect--ripple waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#storyModal">
                                     نمایش استوری
                                 </button>
+                            </td>
+                            <td>
+                                <div class="form-check form-check-primary form-check-inline ms-3">
+                                    <input   wire:confirm="آیا مطمئن هستید؟"  wire:change="changeStatus({{$item->id}})"
+                                             {{$item->status?'checked': ''}}
+                                             class="form-check-input" type="checkbox" id="form-check-default">
+
+                                </div>
                             </td>
                             <td class="text-center">
                                 <div class="action-btns d-flex align-items-center">
@@ -62,12 +71,7 @@
                                             <line x1="14" y1="11" x2="14" y2="17"></line>
                                         </svg>
                                     </a>
-                                    <div class="form-check form-check-primary form-check-inline ms-3">
-                                        <input   wire:confirm="آیا مطمئن هستید؟"  wire:change="changeStatus({{$item->id}})"
-                                                 {{$item->status?'checked': ''}}
-                                                 class="form-check-input" type="checkbox" id="form-check-default">
 
-                                    </div>
 
                                 </div>
                             </td>

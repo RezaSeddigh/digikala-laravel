@@ -1,5 +1,7 @@
-<script src="/client/assets/js/swiper-bundle.min.js"></script>
-<!-- Initialize Swiper -->
+<script src="/client/js/bootstrap.bundle.min.js"></script>
+<script src="/client/js/jquery-3.6.0.min.js"></script>
+<script src="/client/js/swiper-bundle.min.js"></script>
+<script src="/client/js/main.js"></script>
 <script>
     // Story slider
     var swiper = new Swiper(".story__container", {
@@ -66,4 +68,4 @@
         spaceBetween: 10,
     });
 </script>
-@stack('')
+@stack('script')

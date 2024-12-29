@@ -17,12 +17,32 @@
   font-size: 0.75rem;
 }
 
+.myHeaderSearchSwiper .swiper-button-prev,
+.myHeaderSearchSwiper .swiper-button-next {
+    color: #bbb;
+    background-color: white;
+    border: 1px solid #bbb;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 50%; /* Adjust this value as needed */
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+    font-size: 15px;
+}
+
+
 .story__item-img-container {
   padding: 0.2rem;
   border: 1px solid blue;
   border-radius: 50%;
-  width: 85px;
-  height: 85px;
+  width: 90px;
+  height: 87px;
 }
 
 /* Incredible offers */

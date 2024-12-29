@@ -13,11 +13,11 @@
                 <table class="table table-bordered">
                     <thead>
                     <tr>
-                        <th class="text-center" scope="col">ردیف</th>
+                        <th width="50px" class="text-center" scope="col">ردیف</th>
                         <th width="140px" class="text-center" scope="col">عنوان</th>
                         <th class="text-center" scope="col">تصویر اسلایدر</th>
                         <th class="text-center" scope="col">وضعیت</th>
-                        <th class="text-center" scope="col">حذف</th>
+                        <th width="100px" class="text-center" scope="col">حذف</th>
                     </tr>
                     </thead>
                     <tbody>
