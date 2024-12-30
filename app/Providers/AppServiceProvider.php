@@ -24,6 +24,8 @@ use App\Repository\client\auth\ClientAuthRepository;
 use App\Repository\client\auth\ClientAuthRepositoryInterface;
 use App\Repository\client\offer\ClientOfferRepository;
 use App\Repository\client\offer\ClientOfferRepositoryInterface;
+use App\Repository\client\product\ClientProductRepository;
+use App\Repository\client\product\ClientProductRepositoryInterface;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -45,6 +47,7 @@ class AppServiceProvider extends ServiceProvider
 
         $this->app->singleton(ClientAuthRepositoryInterface::class, ClientAuthRepository::class);
         $this->app->singleton(ClientOfferRepositoryInterface::class, ClientOfferRepository::class);
+        $this->app->singleton(ClientProductRepositoryInterface::class, ClientProductRepository::class);
 
     }
 
